@@ -11,7 +11,6 @@ interface RepositoryListProps {
 
 const RepositoryList: React.FC<RepositoryListProps> = ({ 
   repositories, 
-  username, 
   isLoading 
 }) => {
   if (isLoading) {

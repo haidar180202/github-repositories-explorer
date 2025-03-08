@@ -97,6 +97,7 @@
   }
   
   .dropdown-icon {
+text-align: end;
     color: #777;
   }
   
@@ -141,6 +142,7 @@
   }
   
   .star-count {
+    text-align: end;
     font-weight: 700;
   }
   
