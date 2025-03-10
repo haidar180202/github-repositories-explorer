@@ -86,7 +86,7 @@ or
 npm start
 ```
 So if you run this app the page applications you can see like this
-![project app](./src/assets/documentation/image-project%20.png) 
+![project app](./src/assets/documentation/image-project.jpg) 
 
 ### The Finish Of Documentation :
 
@@ -95,6 +95,7 @@ So if you run this app the page applications you can see like this
 - **Repository List:** Show a list of repositories owned by a selected user, complete with name, description, and number of stars.
 - **Responsive Interface:** Responsive design for optimal user experience across devices.
 - **Error Handling:** Accepts errors gracefully, providing clear feedback to the user if no repositories are found.
+- **Unit Testing:** Comprehensive unit tests are included to ensure the reliability and correctness of the application.
 
 ### Technologies Used
 - **React:** For building dynamic user interfaces.

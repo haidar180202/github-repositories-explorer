@@ -1,4 +1,15 @@
 {
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "types": ["node", "react", "react-dom","jest","@testing-library/jest-dom"] // Include Node.js, React, and React DOM types
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

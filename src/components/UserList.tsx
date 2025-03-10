@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { User } from '../types';
 
 interface UserListProps {
@@ -6,7 +6,7 @@ interface UserListProps {
   searchTerm: string;
   selectedUsername: string | null;
   onSelectUser: (username: string) => void;
-  children?: ReactNode; // Add children prop
+  children?: React.ReactNode; // Add children prop
 }
 
 const UserList: React.FC<UserListProps> = ({
@@ -16,6 +16,7 @@ const UserList: React.FC<UserListProps> = ({
   onSelectUser,
   children // Destructure children from props
 }) => {
+  // If there is no search term or no users, return null
   if (!searchTerm || users.length === 0) {
     return null;
   }
@@ -27,23 +28,23 @@ const UserList: React.FC<UserListProps> = ({
       </div>
       <div className="user-list">
         {users.map(user => (
-          <>
+          <div key={user.id} > {/* Add key prop here */}
             <div
-              key={user.id}
-              className={`user-item ${selectedUsername === user.login ? 'selected' : ''}`}
+              style={{marginBottom:"20px"}}
               onClick={() => onSelectUser(user.login)}
             >
-              {user.login}
-              <span className="dropdown-icon">{selectedUsername === user.login ? '▲' : '▼'}</span>
+              <div className={`user-item ${selectedUsername === user.login ? 'selected' : ''}`} style={{ backgroundColor: "rgb(230 220 220)", paddingBottom: "10px" }}>
+                {user.login}
+                <span className="dropdown-icon">{selectedUsername === user.login ? '▲' : '▼'}</span>
+              </div>
             </div>
 
-            {/* Render children below the user list */}
             {selectedUsername === user.login && (
               <div className="children-container">
                 {children}
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>

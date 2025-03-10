@@ -1,5 +1,3 @@
-// src/components/RepositoryItem.tsx
-
 import React from 'react';
 import { Repository } from '../types';
 
@@ -17,7 +15,7 @@ const RepositoryItem: React.FC<RepositoryItemProps> = ({ repository }) => {
         </div>
       </div>
       <p className="repository-description">
-        {repository.description || 'Repository description'}
+        {repository.description || 'No description available'}
       </p>
     </div>
   );

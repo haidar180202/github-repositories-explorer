@@ -1,5 +1,3 @@
-// src/components/RepositoryList.tsx
-
 import React from 'react';
 import { Repository } from '../types';
 
@@ -11,6 +9,7 @@ interface RepositoryListProps {
 
 const RepositoryList: React.FC<RepositoryListProps> = ({ 
   repositories, 
+  username, 
   isLoading 
 }) => {
   if (isLoading) {
@@ -18,7 +17,7 @@ const RepositoryList: React.FC<RepositoryListProps> = ({
   }
 
   if (repositories.length === 0) {
-    return <div className="no-repositories">No repositories found</div>;
+    return <div className="no-repositories">No repositories found for {username}.</div>;
   }
 
   return (
@@ -26,11 +25,13 @@ const RepositoryList: React.FC<RepositoryListProps> = ({
       {repositories.map(repo => (
         <div key={repo.id} className="repository-item">
           <div className="repository-header">
-            <span className="repository-title">{repo.name}</span>
-            <span className="star-count">{repo.stargazers_count} ★</span>
+            <h3 className="repository-title">{repo.name}</h3>
+            <div className="star-count">
+              {repo.stargazers_count} ★
+            </div>
           </div>
           <p className="repository-description">
-            {repo.description || 'Repository description'}
+            {repo.description || 'No description available'}
           </p>
         </div>
       ))}

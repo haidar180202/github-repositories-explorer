@@ -56,6 +56,8 @@
     cursor: pointer;
     font-size: 14px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
   }
   
   .search-button:hover {
@@ -97,7 +99,7 @@
   }
   
   .dropdown-icon {
-text-align: end;
+    text-align: end;
     color: #777;
   }
   
